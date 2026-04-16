@@ -1,0 +1,20 @@
+{
+  "name": "pw2_api_clientes",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/AnaCarolinedx/Pw2_Api_Clientes#readme",
+  "bugs": {
+    "url": "https://github.com/AnaCarolinedx/Pw2_Api_Clientes/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaCarolinedx/Pw2_Api_Clientes.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
