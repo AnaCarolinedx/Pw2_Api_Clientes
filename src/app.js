@@ -29,7 +29,7 @@ app.use((req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`servidor rodando na porta ${PORT}`)
+    console.log(`servidor rodando na porta ${PORT}`);
 })
 
 module.exports = app;
