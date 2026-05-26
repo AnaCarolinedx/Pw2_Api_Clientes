@@ -1,10 +1,10 @@
-class Clientes{
-    constructor(id, nome, telefone, endereço){
+class Cliente {
+    constructor(id, nome, telefone, endereco) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
-        this.endereço = endereço;
+        this.endereco = endereco;
     }
 }
 
-module.exports = Clientes;
+module.exports = Cliente;

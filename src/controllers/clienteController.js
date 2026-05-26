@@ -1,3 +1,4 @@
+const Cliente = require("../model/Cliente");
 const clientes = require ("../../data/clientes");
 
 const listarClientes = async (req, res) => {

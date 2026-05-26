@@ -1,8 +1,7 @@
 // data/clientes.js
 // Dados mockados para simular um banco de dados
 
-const Cliente = require("../src/models/Cliente");
-
+const Cliente = require("../src/model/Cliente");
 const clientes = [
   new Cliente(1, "Ana Paula Souza", "(11) 91234-5678", "Rua das Flores, 123 - São Paulo/SP"),
   new Cliente(2, "Bruno Costa", "(21) 99876-5432", "Av. Atlântica, 456 - Rio de Janeiro/RJ"),
