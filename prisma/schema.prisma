@@ -1,0 +1,17 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url = env("pw2_api_clientes")
+}
+
+model Cliente {
+    id Int @default(autoincrement())
+    nome String
+    telefone String?
+    endereco String?
+
+    @@map("pw2_api_clientes")
+}
