@@ -38,4 +38,10 @@ app.listen(PORT, () => {
     console.log(`servidor rodando na porta ${PORT}`);
 })
 
+process.on("SIGINT", async () => {
+    await prisma.$disconnect();
+    console.log("Conexão com o banco encerrada.");
+    process.exit(0);
+});
+
 module.exports = app;
