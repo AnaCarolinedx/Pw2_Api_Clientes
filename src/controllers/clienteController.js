@@ -1,12 +1,13 @@
 const Cliente = require("../model/Cliente");
-const clientes = require ("../../data/clientes");
+const prisma = require("../config/prisma");
 
 const listarClientes = async (req, res) => {
 try{
+    const resultado = await prisma.cliente.findMany();
     return res.status(200).json({
     sucesso: true,
-    total: clientes.length,
-    dados: clientes,
+    total: resultado.length,
+    dados: resultado.map((c) => ({ id: c.id, nome: c.nome, telefone: c.telefone, endereco: c.endereco}))
     });
 } catch (error) {
     return res.status(500).json({
@@ -27,7 +28,9 @@ try {
         });
     }
 
-const cliente = clientes.find((c) => c.id === id);
+const cliente = await prisma.cliente.findUnique({
+    where: { id: id}
+});
 
     if (!cliente) {
         return res.status(404).json({
@@ -53,13 +56,13 @@ const cliente = clientes.find((c) => c.id === id);
 const adicionarCliente = async(req, res) => {
     try{
         const { nome, telefone, endereco } = req.body;
-        const novo_cliente = new Cliente(
-            clientes.length + 1,
-            nome,
-            telefone,
-            endereco
-        );
-        clientes.push(novo_cliente);
+        const novo_cliente = await prisma.cliente.create({
+            data: {
+                nome: nome,
+                telefone: telefone,
+                endereco: endereco
+            }
+        });
         return res.status(201).json({
             sucesso: true,
             mensagem: "Usuario adicionado com sucesso"

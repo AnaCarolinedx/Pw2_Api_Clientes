@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
     provider = "mysql"
-    url = env("pw2_api_clientes")
+    url = env("MYSQL_CONECTION_URL")
 }
 
 model Cliente {
