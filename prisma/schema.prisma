@@ -12,6 +12,7 @@ model Cliente {
     nome String
     telefone String?
     endereco String?
+    ativo    Boolean @default (true)
 
     @@map("pw2_api_clientes")
 }
